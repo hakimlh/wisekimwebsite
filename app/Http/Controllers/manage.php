@@ -11,7 +11,7 @@ use File;
 
 class manage extends Controller
 {
-    // private $counter = 1;
+    private $counter = 1;
 
     public function AddProduct(Request $request){
       if($request->isMethod('post')){
