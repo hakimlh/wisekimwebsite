@@ -38,12 +38,12 @@ class manage extends Controller
     public function visitors(){
 
         //Usage
-        // File::put($path,$contents);
-        //Example
-        // $this->counter = $this->counter + 1;
-        // File::put("mytextdocument.txt",$this->counter);
+        File::put($path,$contents);
+        Example
+        $this->counter = $this->counter + 1;
+        File::put("mytextdocument.txt",$this->counter);
 
-        // $contents = File::get("mytextdocument.txt");
+        $contents = File::get("mytextdocument.txt");
 
         $mycounter = new Visitor();
         $mycounter->save();
