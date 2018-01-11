@@ -66,18 +66,13 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-
-
             <div class="content">
                 <div class="title m-b-md">
                     Profile
                 </div>
-
                 <div class="links">
                     <a href="#">{{ $name }}</a>
-                    <a href="#">{{ $lastname }}</a>
                     <a href="#">{{$age}}</a>
-
                 </div>
             </div>
         </div>
