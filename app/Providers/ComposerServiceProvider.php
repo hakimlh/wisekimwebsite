@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use View  ;
+use View;
 
 class ComposerServiceProvider extends ServiceProvider
 {

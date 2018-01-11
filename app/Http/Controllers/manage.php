@@ -56,6 +56,6 @@ class manage extends Controller
     }
 
     public function ShowProfile(){
-      return view("pages.Profile");
+      return view("pages.profile");
     }
 }

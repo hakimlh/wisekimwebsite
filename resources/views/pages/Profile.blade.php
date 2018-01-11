@@ -75,8 +75,8 @@
 
                 <div class="links">
                     <a href="#">{{ $name }}</a>
-                    <a href="#">lastname</a>
-                    <a href="#">Age</a>
+                    <a href="#">{{ $lastname }}</a>
+                    <a href="#">{{$age}}</a>
 
                 </div>
             </div>
