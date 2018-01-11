@@ -1,10 +1,13 @@
 <?php
-namespace App\Http\;
+namespace App\Http\ViewComposers;
 
-use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\View\View;
 
-class Kernel extends HttpKernel
+class ProfileComposer
 {
+  public function compose(View $view){
+      $view ->with("Married", random_int(0,1));
+  }
 
 }
 
