@@ -20,7 +20,6 @@ class manage extends Controller
         $myproduct->type=$request->input('type');
         $file = Input::file('file');
         $fl='img/products/'.$file->getClientOriginalName();
-
         $file->move('img/products', $file->getClientOriginalName());
         $myproduct->img_url = $fl;
         $myproduct->save();
@@ -54,5 +53,9 @@ class manage extends Controller
         // $mycounters = Visitor::count();
 
         // dd($mycounters);
+    }
+
+    public function ShowProfile(){
+      return view("pages.Profile");
     }
 }
