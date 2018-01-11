@@ -75,8 +75,8 @@
 
                 <div class="links">
                     <a href="#">{{ $name }}</a>
-                    <a href="#">Laracasts</a>
-                    <a href="#">News</a>
+                    <a href="#">lastname</a>
+                    <a href="#">Age</a>
 
                 </div>
             </div>
