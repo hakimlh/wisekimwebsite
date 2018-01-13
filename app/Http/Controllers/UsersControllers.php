@@ -12,5 +12,6 @@ class UsersControllers extends Controller
      $users = User::paginate(10);
      // return $users;
      return view("pages.profile",compact('users'));
+
    }
 }

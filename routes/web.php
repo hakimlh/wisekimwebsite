@@ -28,6 +28,12 @@ Route::post('/add', 'manage@AddProduct')->middleware('auth');
 
 Route::get('profile', 'UsersControllers@index');
 
+// Ajax
+Route::get('/ajax',function(){
+   return view('pages.ajaxpage');
+});
+Route::post('/ajax','AjaxControllers@index');
+
 // dashboard
 Route::get('/dashboard', 'controlpanel@dashboard')->middleware('auth');
 Route::get('/user', 'controlpanel@user')->middleware('auth');
