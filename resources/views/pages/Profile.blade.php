@@ -5,35 +5,32 @@
   .myLi:hover{
     background-color: rgb(225,225,225);
   }
+  .img_profile{
+    border-radius: 100%;
+    box-shadow: 0 0 2px #ffe;
+    border: 2px solide #fff;
+  }
 </style>
 @endsection
 @section('content')
-<header class="text-center" name="home">
-  <div class="intro-text">
-    <h1>Welecome Home <span class="color">Admin</span></h1>
-    <p>Abdelhakim Lahlou</p>
-    <div class="clearfix"></div>
-    <a href="#about-section" class="btn btn-default btn-lg page-scroll">Learn More</a> </div>
-</header>
-
 <div class="row" style="margin-top:20px">
   <div class="col-md-4 col-md-offset-4">
-    <p>Your age is @age([1992,12,26]) years old</p>
-    <!-- <span style="margin-top:20px">Total Users :  {{ $users->total()}}</span>
+    <div class="panel panel-default">
+      <div class="panel-head text-center">
+        <h3>Profile</h3>
+        <img  class="img_profile" src="https://www.codetic.net/demo/templates/Privado/img/avatar.png" alt="">
+      </div>
+      <div class="panel-body text-center">
+        <h1>{{ $user->name }}</h1>
+        <h3>{{ $user->username }}</h3>
+        <h4>{{ $user->dob }}</h4>
+        <h1>{{ $user->name }}</h1>
+      </div>
+      <div class="panel-footer text-center">
 
-    <ul class="list-group">
-      @forelse($users as $user)
-        <li class="list-group-item myLi" style="margin-top:20px">
-          <span> {{$user->name}}</span>
-          <span class="pull-right clearfix">Joined ({{ $user->created_at->diffForHumans()}})
-            <button class="btn btn-xs btn-primary" name="button">Follow</button>
-          </span>
-        </li>
-      @empty
-        <p>No users found</p>
-      @endforelse
-    </ul>
-     {{ $users->links() }} -->
+      </div>
+
+    </div>
   </div>
 </div>
 @endsection

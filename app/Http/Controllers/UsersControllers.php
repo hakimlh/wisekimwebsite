@@ -8,10 +8,10 @@ use App\User;
 
 class UsersControllers extends Controller
 {
-   public function index(){
-     $users = User::paginate(10);
-     // return $users;
-     return view("pages.profile",compact('users'));
+   public function profile($username){
+
+     $user = User::whereUsername($username)->first();
+     return view("pages.profile",compact('user'));
 
    }
 }

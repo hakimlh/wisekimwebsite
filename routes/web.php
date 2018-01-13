@@ -29,7 +29,7 @@ Route::post('/ajax','AjaxController@index');
 
 Route::group(['middleware_2'=>'authenticated'],function ()
 {
-  Route::get('profile', 'UsersControllers@index');
+  Route::get('/profile/{username}', 'UsersControllers@profile');
 });
 
 

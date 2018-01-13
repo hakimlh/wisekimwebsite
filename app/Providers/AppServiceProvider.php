@@ -39,7 +39,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // $age = Carbon::createFromDate(2000,12,26)->age;
-        // View::share('age',$age);
+        
     }
 }
