@@ -26,7 +26,7 @@ Route::get('/add', 'manage@AddProduct')->middleware('auth');
 Route::post('/add', 'manage@AddProduct')->middleware('auth');
 // Route::get('/product', 'manage@ViewProducts')->middleware('auth');
 
-Route::get('profile', 'UsersControllers@index');
+Route::get('profile', 'UsersControllers@index')->middleware("authenticated");
 
 // Ajax
 Route::get('/ajax',function(){

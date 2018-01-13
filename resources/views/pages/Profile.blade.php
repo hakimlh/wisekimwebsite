@@ -7,7 +7,6 @@
   }
 </style>
 @endsection
-
 @section('content')
 <header class="text-center" name="home">
   <div class="intro-text">
