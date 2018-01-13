@@ -16,8 +16,9 @@ class AuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-      if (Auth::check())
-        return $next($request);
+      // if user has been login do this, means continue
+      if (Auth::check()) return $next($request);
+      // if is not redirect to login page
         return redirect("/login");
     }
 }

@@ -14,42 +14,52 @@
 Route::get('/index', 'manage@visitors');
 Route::get('/', 'manage@visitors');
 
-
-
-
 Auth::routes();
-
-// Site
-Route::get('/add', 'manage@AddProduct')->middleware('auth');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/add', 'manage@AddProduct')->middleware('auth');
-Route::post('/add', 'manage@AddProduct')->middleware('auth');
-// Route::get('/product', 'manage@ViewProducts')->middleware('auth');
-
-Route::get('profile', 'UsersControllers@index')->middleware("authenticated");
 
 // Ajax
 Route::get('/ajax',function(){
    return view('pages.ajaxpage');
 });
-Route::post('/ajax','AjaxControllers@index');
-
-// dashboard
-Route::get('/dashboard', 'controlpanel@dashboard')->middleware('auth');
-Route::get('/user', 'controlpanel@user')->middleware('auth');
-Route::get('/table', 'controlpanel@table')->middleware('auth');
-Route::get('/typography', 'controlpanel@typography')->middleware('auth');
-Route::get('/icons', 'controlpanel@icons')->middleware('auth');
-Route::get('/maps', 'controlpanel@maps')->middleware('auth');
-Route::get('/notifications', 'controlpanel@notifications')->middleware('auth');
-Route::get('/upgrade', 'controlpanel@upgrade')->middleware('auth');
+Route::post('/ajax','AjaxController@index');
 
 
-Route::post('/products', 'controlpanel@Products')->middleware('auth');
-Route::get('/products', 'controlpanel@Products')->middleware('auth');
+
+// Route::get('profile', 'UsersControllers@index')->middleware("authenticated");
+// Or  do this :
+
+Route::group(['middleware_2'=>'authenticated'],function ()
+{
+  Route::get('profile', 'UsersControllers@index');
+});
 
 
-// Route::post('/products', 'controlpanel@Products');
-Route::get('/products_tools/{id}', 'controlpanel@removeProduct')->middleware('auth');
-Route::get('/products_edit/{id}', 'controlpanel@editProduct')->middleware('auth');
-Route::post('/products_edit/{id}', 'controlpanel@editProduct')->middleware('auth');
+
+
+// Route Group Middleware
+Route::group(['middleware'=>'auth'],function ()
+{
+  // Site
+  Route::get('/add', 'manage@AddProduct');
+  Route::get('/home', 'HomeController@index')->name('home');
+  Route::get('/add', 'manage@AddProduct');
+  Route::post('/add', 'manage@AddProduct');
+  // Route::get('/product', 'manage@ViewProducts');
+
+  // dashboard
+  Route::get('/dashboard', 'controlpanel@dashboard');
+  Route::get('/user', 'controlpanel@user');
+  Route::get('/table', 'controlpanel@table');
+  Route::get('/typography', 'controlpanel@typography');
+  Route::get('/icons', 'controlpanel@icons');
+  Route::get('/maps', 'controlpanel@maps');
+  Route::get('/notifications', 'controlpanel@notifications');
+  Route::get('/upgrade', 'controlpanel@upgrade');
+  Route::post('/products', 'controlpanel@Products');
+  Route::get('/products', 'controlpanel@Products');
+
+
+  // Route::post('/products', 'controlpanel@Products');
+  Route::get('/products_tools/{id}', 'controlpanel@removeProduct');
+  Route::get('/products_edit/{id}', 'controlpanel@editProduct');
+  Route::post('/products_edit/{id}', 'controlpanel@editProduct');
+});

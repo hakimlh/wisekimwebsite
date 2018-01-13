@@ -18,7 +18,9 @@
 
 <div class="row" style="margin-top:20px">
   <div class="col-md-4 col-md-offset-4">
-    <span style="margin-top:20px">Total Users :  {{ $users->total()}}</span>
+    <p>Your age is @age([1992,12,26]) years old</p>
+    <!-- <span style="margin-top:20px">Total Users :  {{ $users->total()}}</span>
+
     <ul class="list-group">
       @forelse($users as $user)
         <li class="list-group-item myLi" style="margin-top:20px">
@@ -31,7 +33,7 @@
         <p>No users found</p>
       @endforelse
     </ul>
-     {{ $users->links() }}
+     {{ $users->links() }} -->
   </div>
 </div>
 @endsection
