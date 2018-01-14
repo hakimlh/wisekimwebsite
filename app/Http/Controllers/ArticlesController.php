@@ -14,16 +14,16 @@ class ArticlesController extends Controller
     {
       // 1 : Eloquent
 
-        // $articles = Article::all();
+        $articles = Article::paginate(10);
         // $articles = Article::whereTitle('Game of thrones')->get();
 
       // 2 : Query Builder
 
         // $articles = DB::table('articles')->get();
-         $articles = DB::table('articles')->whereTitle('Game of thrones')->get();
+         // $articles = DB::table('articles')->whereTitle('Game of thrones')->get();
 
 
-        return $articles;
+        return view('articles.index',compact('articles'));
     }
     public function create()
     {
