@@ -32,7 +32,8 @@ Route::group(['middleware_2'=>'authenticated'],function ()
   Route::get('/profile/{username}', 'UsersControllers@profile');
 });
 
-
+Route::resource('articles','ArticlesController');
+// Route::get('/articles/create','ArticlesController');
 
 
 // Route Group Middleware

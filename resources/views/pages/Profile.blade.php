@@ -32,7 +32,7 @@
   <div class="intro-text">
     <div class="col-md-4 col-md-offset-4" >
       <div class="panel panel-default" id='mypanel'>
-        <div class="panel-head text-center">
+        <div class="panel-heading text-center">
           <h3>Profile</h3>
           <img  class="img_profile" src="https://www.codetic.net/demo/templates/Privado/img/avatar.png" alt="">
         </div>
