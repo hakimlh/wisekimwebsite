@@ -28,6 +28,7 @@
         <div class="panel-body text-center">
           <form class="form" action="/articles" method="post">
             {{csrf_field()}}
+            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
             <div class="form-group">
               <input type="text" class="form-control" name="title" placeholder="Article title">
               <textarea name="content" class="form-control" rows="4" class="text" cols="40" placeholder="content">
