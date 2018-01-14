@@ -2,13 +2,7 @@
 
 @section('MyCssStyle')
 <style media="screen" type="text/css" >
-  .rw{
-    margin-top: 20px;
-    margin-right: 0px;
-  }
-  .form-control{
-    margin: 5px;
-  }
+
 </style>
 @endsection
 @section('content')
@@ -19,17 +13,16 @@
     <a href="#about-section" class="btn btn-default btn-lg page-scroll">Learn More</a> </div>
 </header>
   <div class="container">
-    @forelse($articles as $article)
       <div class="col-md-6 col-md-offset-3" >
         <div class="panel panel-default" id='mypanel'>
           <div class="panel-heading text-center">
             <h3>{{ $article->title}} <span class="pull-right">{{$article->created_at->diffForHumans()}}</span></h3>
           </div>
           <div class="panel-body ">
-              {{ $article->ShortContent }} <a href="/articles/{{$article->id}}">Read More</a>
+              {{ $article->content }}
           </div>
           <div class="panel-footer clearfix" style="background-color: white;">
-            <a href="/articles/{{$article->id}}/edit" class="btn-lg"> <i class="fa fa-edit pull-left"></i></a>
+            <a href="/articles/{{$article->id}}/edit"> <i class="fa fa-edit pull-left"></i></a>
             @if ($article->user_id == Auth::id())
             <form class="pull-left" action="/articles/{{ $article->id }}" method="post">
               {{ method_field('DELETE') }}
@@ -37,20 +30,11 @@
               <input type="submit" name="delete" value="Delete" class="btn btn-danger btn-xs">
             </form>
             @endif
+
+
             <i class="fa fa-heart  pull-right"></i>
           </div>
         </div>
       </div>
-    @empty
-      <h3>No Article Found</h3>
-    @endforelse
   </div>
-  <div class="container">
-    <div class="col-md-6 col-md-offset-3">
-      {{ $articles->links() }}
-    </div>
-  </div>
-
-
-
 @endsection

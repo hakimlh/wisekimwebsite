@@ -23,11 +23,11 @@ class ArticlesController extends Controller
          // $articles = DB::table('articles')->whereTitle('Game of thrones')->get();
 
 
-        return view('articles.index',compact('articles'));
+        return view('/articles.index',compact('articles'));
     }
     public function create()
     {
-        return view('articles.create');
+        return view('/articles.create');
     }
     public function store(Request $request)
     {
@@ -66,18 +66,33 @@ class ArticlesController extends Controller
     }
     public function show($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        return view('/articles.show',compact('article'));
+
+
     }
     public function edit($id)
     {
-        //
+      $article = Article::findOrFail($id);
+      return view('/articles.edit',compact('article'));
     }
     public function update(Request $request, $id)
     {
-
+        $article = Article::findOrFail($id);
+        $article->update($request->all());
+        return redirect('/articles/show');
     }
     public function destroy($id)
     {
-        //
+      // Article::destroy($id); // Article::destroy([1,2,3,...]);
+
+       // or
+
+      $article = Article::findOrFail($id);
+      $article->delete(); // $article->forceDelete();
+
+      return redirect('/articles');
+
+
     }
 }

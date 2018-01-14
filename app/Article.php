@@ -20,12 +20,12 @@ class Article extends Model
         $this->arttributes['name'] = (boolean)($value);
       }
     */
-    
+
     // Getters
-    /*
-      public function getNameAttribute($value)
+
+      public function getShortContentAttribute()
       {
-        return $value;
+        return substr($this->content,0,random_int(60,150)).'...';
       }
-    */
+
 }
