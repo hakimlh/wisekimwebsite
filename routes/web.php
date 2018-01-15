@@ -22,7 +22,10 @@ Route::get('/ajax',function(){
 });
 Route::post('/ajax','AjaxController@index');
 
-
+//One to one Inverse
+Route::get('/onetoone',function(){
+   return App\Profile::find(1);
+});
 
 // Route::get('profile', 'UsersControllers@index')->middleware("authenticated");
 // Or  do this :
