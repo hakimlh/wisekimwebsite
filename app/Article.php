@@ -27,4 +27,9 @@ class Article extends Model
       {
         return substr($this->content,0,random_int(60,150)).'...';
       }
+
+      public function owner()
+      {
+        return $this->belongsTo(User::class,'user_id');
+      }
 }
