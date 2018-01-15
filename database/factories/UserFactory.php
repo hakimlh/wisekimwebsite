@@ -31,7 +31,16 @@ $factory->define(App\Article::class, function (Faker $faker) {
 
     return [
         'title' => $faker->word,
-        'content' => $faker->paragraph(5),
+        'content' => $faker->paragraph(random_int(3,5)),
         'user_id' => App\User::all()->random()->id,
+    ];
+});
+
+
+$factory->define(App\Profile::class, function (Faker $faker) {
+
+    return [
+        'city' => $faker->city,
+        'about' => $faker->paragraph(random_int(3,5)),
     ];
 });

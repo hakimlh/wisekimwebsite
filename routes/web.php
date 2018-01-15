@@ -22,6 +22,8 @@ Route::get('/ajax',function(){
 });
 Route::post('/ajax','AjaxController@index');
 
+Route::get('/users/{user_id}/articles','ArticleUserController@index');
+
 //One to one Inverse
 Route::get('/onetoone',function(){
    return App\Profile::find(1);
