@@ -30,4 +30,9 @@ class User extends Authenticatable
     protected $dates = [
         'dob'
     ];
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
 }

@@ -39,6 +39,8 @@
         <div class="panel-body text-center">
           <h2>{{ $user->name }}</h2>
           <h3>{{ $user->username }}</h3>
+          <h3>{{ $user->profile->city }}</h3>
+          <h3>{{ $user->profile->about }}</h3>
           <h4>{{ $user->dob->format('Y-m-d') }} ({{ $user->dob->age }} years old)</h4>
           <h5>{{ $user->email }}</h5>
         </div>

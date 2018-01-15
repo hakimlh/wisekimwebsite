@@ -15,7 +15,8 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\UserRegistered' => [
           'App\Listeners\SendActivationCode',
-            'App\Listeners\AssignRole',
+          'App\Listeners\AssignRole',
+            'App\Listeners\CreateProfile',
         ],
     ];
 
