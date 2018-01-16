@@ -8,6 +8,19 @@
   }
   .form-control{
     margin: 5px;
+    border-radius:
+  }
+  .tag{
+     background-color:rgb(234,234,234);
+     position: relative;
+     border-radius:4px;
+     padding:2px 10px 2px 10px;
+     margin-right: 5px;
+     color:rgb(68,68,68);
+  }
+  .owner{
+    color:red;
+    font-size: 12px;
   }
 </style>
 @endsection
@@ -23,10 +36,15 @@
       <div class="col-md-6 col-md-offset-3" >
         <div class="panel panel-default" id='mypanel'>
           <div class="panel-heading text-center">
-            <h3>{{ $article->title}} ({{ $article->owner->name}})<span class="pull-right">{{$article->created_at->diffForHumans()}}</span></h3>
+            <h3>{{ $article->title}}<span class="pull-right">{{$article->created_at->diffForHumans()}}</span></h3>
           </div>
           <div class="panel-body ">
-              {{ $article->ShortContent }} <a href="/articles/{{$article->id}}">Read More</a>
+              {{ $article->ShortContent }} <a href="/articles/{{$article->id}}">Read More</a><br><br>
+
+              @foreach ($article->tags as $tag)
+                <span class="tag"> {{$tag->name}} </span>
+              @endforeach
+              <span class="clearfix pull-right owner">Published by : {{ $article->owner->name}}</span>
           </div>
           <div class="panel-footer clearfix" style="background-color: white;">
             <a href="/articles/{{$article->id}}/edit" class="btn-lg"> <i class="fa fa-edit pull-left"></i></a>

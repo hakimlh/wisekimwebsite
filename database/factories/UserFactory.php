@@ -44,3 +44,12 @@ $factory->define(App\Profile::class, function (Faker $faker) {
         'about' => $faker->paragraph(random_int(3,5)),
     ];
 });
+
+$factory->define(App\Tag::class, function (Faker $faker) {
+
+
+
+    return [
+        'name' => $faker->word
+    ];
+});
