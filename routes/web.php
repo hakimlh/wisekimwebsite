@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// its just a test for git
+// its just a test for git for bitbucket
 
 Route::get('/index', 'manage@visitors');
 Route::get('/', 'manage@visitors');
